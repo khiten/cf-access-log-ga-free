@@ -1,9 +1,9 @@
 #!/bin/bash
-# cloudflare-daily-agg のcron入口。
-# 多重起動を防止した上で cloudflare_daily_agg.py を実行する。
+# cf-access-log-ga-free のcron入口。
+# 多重起動を防止した上で cf_access_log_ga_free.py を実行する。
 #
 # cron設定例（10分ごと。crontab -e で登録）:
-#   */10 * * * * /path/to/cloudflare-daily-agg/run.sh >> /path/to/cloudflare-daily-agg/run.log 2>&1
+#   */10 * * * * /path/to/cf-access-log-ga-free/python/run.sh >> /path/to/cf-access-log-ga-free/python/run.log 2>&1
 #
 # 1日分の処理が完了していれば、この実行はほぼ何もせず即終了する
 # （state.jsonを見て「やることがない」と判断してすぐ終わるだけ）ので、
@@ -25,7 +25,7 @@ LOCK_STALE_SECONDS="${LOCK_STALE_SECONDS:-900}"
 PYTHON_BIN="${PYTHON_BIN:-python3}"
 
 run_python() {
-    "$PYTHON_BIN" "$SCRIPT_DIR/cloudflare_daily_agg.py"
+    "$PYTHON_BIN" "$SCRIPT_DIR/cf_access_log_ga_free.py"
 }
 
 if command -v flock >/dev/null 2>&1; then
