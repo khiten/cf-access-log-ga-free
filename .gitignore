@@ -1,0 +1,8 @@
+config.env
+data/
+__pycache__/
+*.pyc
+.run.lock
+.run.lock.d/
+*.tmp
+run.log
