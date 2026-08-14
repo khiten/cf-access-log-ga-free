@@ -13,7 +13,7 @@ Cloudflare GraphQL Analytics API（`httpRequestsAdaptiveGroups`）を使って�
 | 実装 | 動作要件 | ディレクトリ |
 |---|---|---|
 | Python版 | bash + python3（標準ライブラリのみ） | [`python/`](python/) |
-| PHP版 | bash + PHP CLI（`json`拡張。準備中） | `php/` |
+| PHP版 | bash + PHP CLI 7.4以上（`curl`・`zlib`・`json`拡張） | [`php/`](php/) |
 
 python3が使えない環境（PHP CLIしかない共用サーバー等）ではPHP版を、python3が使える環境ではPython版を選んでください。どちらも同じ仕様で動作します。
 
